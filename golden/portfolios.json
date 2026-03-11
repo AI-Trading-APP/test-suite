@@ -1,0 +1,86 @@
+[
+  {
+    "id": "portfolio-empty",
+    "user_id": "user-new-001",
+    "name": "Default Portfolio",
+    "cash_balance": 100000.00,
+    "positions": [],
+    "transactions": []
+  },
+  {
+    "id": "portfolio-single",
+    "user_id": "user-basic-001",
+    "name": "My Portfolio",
+    "cash_balance": 90000.00,
+    "positions": [
+      {"ticker": "AAPL", "quantity": 40, "avg_cost": 230.00, "current_price": 232.00}
+    ],
+    "transactions": [
+      {"id": "txn-p2-001", "type": "buy", "ticker": "AAPL", "quantity": 40, "price": 230.00, "total": 9200.00, "fee": 0, "timestamp": "2026-02-15T10:30:00Z"},
+      {"id": "txn-p2-002", "type": "deposit", "amount": 100000.00, "timestamp": "2026-02-01T09:00:00Z"}
+    ]
+  },
+  {
+    "id": "portfolio-diversified",
+    "user_id": "user-pro-001",
+    "name": "Diversified Portfolio",
+    "cash_balance": 50000.00,
+    "positions": [
+      {"ticker": "AAPL", "quantity": 20, "avg_cost": 228.00, "current_price": 232.00},
+      {"ticker": "MSFT", "quantity": 15, "avg_cost": 415.00, "current_price": 418.00},
+      {"ticker": "GOOGL", "quantity": 10, "avg_cost": 175.00, "current_price": 176.00},
+      {"ticker": "JPM", "quantity": 25, "avg_cost": 210.00, "current_price": 212.00}
+    ],
+    "transactions": [
+      {"id": "txn-p3-001", "type": "deposit", "amount": 100000.00, "timestamp": "2026-01-15T09:00:00Z"},
+      {"id": "txn-p3-002", "type": "buy", "ticker": "AAPL", "quantity": 20, "price": 228.00, "total": 4560.00, "fee": 0, "timestamp": "2026-01-20T10:15:00Z"},
+      {"id": "txn-p3-003", "type": "buy", "ticker": "MSFT", "quantity": 15, "price": 415.00, "total": 6225.00, "fee": 0, "timestamp": "2026-01-22T11:00:00Z"},
+      {"id": "txn-p3-004", "type": "buy", "ticker": "GOOGL", "quantity": 10, "price": 175.00, "total": 1750.00, "fee": 0, "timestamp": "2026-02-01T14:30:00Z"},
+      {"id": "txn-p3-005", "type": "buy", "ticker": "JPM", "quantity": 25, "price": 210.00, "total": 5250.00, "fee": 0, "timestamp": "2026-02-10T09:45:00Z"},
+      {"id": "txn-p3-006", "type": "buy", "ticker": "NVDA", "quantity": 30, "price": 128.00, "total": 3840.00, "fee": 0, "timestamp": "2026-02-12T10:00:00Z"},
+      {"id": "txn-p3-007", "type": "sell", "ticker": "NVDA", "quantity": 30, "price": 135.00, "total": 4050.00, "fee": 0, "timestamp": "2026-02-28T15:00:00Z"}
+    ]
+  },
+  {
+    "id": "portfolio-large",
+    "user_id": "user-admin-001",
+    "name": "Admin Portfolio",
+    "cash_balance": 10000.00,
+    "positions": [
+      {"ticker": "AAPL", "quantity": 50, "avg_cost": 225.00, "current_price": 232.00},
+      {"ticker": "MSFT", "quantity": 30, "avg_cost": 410.00, "current_price": 418.00},
+      {"ticker": "GOOGL", "quantity": 40, "avg_cost": 172.00, "current_price": 176.00},
+      {"ticker": "AMZN", "quantity": 25, "avg_cost": 188.00, "current_price": 195.00},
+      {"ticker": "NVDA", "quantity": 100, "avg_cost": 120.00, "current_price": 132.00},
+      {"ticker": "JPM", "quantity": 60, "avg_cost": 205.00, "current_price": 212.00},
+      {"ticker": "UNH", "quantity": 10, "avg_cost": 520.00, "current_price": 535.00},
+      {"ticker": "XOM", "quantity": 80, "avg_cost": 108.00, "current_price": 112.00}
+    ],
+    "transactions": [
+      {"id": "txn-p4-001", "type": "deposit", "amount": 200000.00, "timestamp": "2025-12-01T09:00:00Z"},
+      {"id": "txn-p4-002", "type": "buy", "ticker": "AAPL", "quantity": 50, "price": 225.00, "total": 11250.00, "fee": 0, "timestamp": "2025-12-05T10:00:00Z"},
+      {"id": "txn-p4-003", "type": "buy", "ticker": "MSFT", "quantity": 30, "price": 410.00, "total": 12300.00, "fee": 0, "timestamp": "2025-12-10T10:30:00Z"},
+      {"id": "txn-p4-004", "type": "buy", "ticker": "GOOGL", "quantity": 40, "price": 172.00, "total": 6880.00, "fee": 0, "timestamp": "2025-12-15T11:00:00Z"},
+      {"id": "txn-p4-005", "type": "buy", "ticker": "AMZN", "quantity": 25, "price": 188.00, "total": 4700.00, "fee": 0, "timestamp": "2026-01-05T09:30:00Z"},
+      {"id": "txn-p4-006", "type": "buy", "ticker": "NVDA", "quantity": 100, "price": 120.00, "total": 12000.00, "fee": 0, "timestamp": "2026-01-10T10:00:00Z"},
+      {"id": "txn-p4-007", "type": "buy", "ticker": "JPM", "quantity": 60, "price": 205.00, "total": 12300.00, "fee": 0, "timestamp": "2026-01-20T14:00:00Z"},
+      {"id": "txn-p4-008", "type": "buy", "ticker": "UNH", "quantity": 10, "price": 520.00, "total": 5200.00, "fee": 0, "timestamp": "2026-02-01T10:15:00Z"},
+      {"id": "txn-p4-009", "type": "buy", "ticker": "XOM", "quantity": 80, "price": 108.00, "total": 8640.00, "fee": 0, "timestamp": "2026-02-10T11:30:00Z"},
+      {"id": "txn-p4-010", "type": "sell", "ticker": "META", "quantity": 20, "price": 585.00, "total": 11700.00, "fee": 0, "timestamp": "2026-02-20T15:00:00Z"},
+      {"id": "txn-p4-011", "type": "buy", "ticker": "META", "quantity": 20, "price": 575.00, "total": 11500.00, "fee": 0, "timestamp": "2026-01-25T10:00:00Z"}
+    ]
+  },
+  {
+    "id": "portfolio-edge-case",
+    "user_id": "user-free-001",
+    "name": "Edge Case Portfolio",
+    "cash_balance": 0.50,
+    "positions": [
+      {"ticker": "TSLA", "quantity": 1, "avg_cost": 250.00, "current_price": 252.00}
+    ],
+    "transactions": [
+      {"id": "txn-p5-001", "type": "deposit", "amount": 250.50, "timestamp": "2026-03-01T09:00:00Z"},
+      {"id": "txn-p5-002", "type": "buy", "ticker": "TSLA", "quantity": 1, "price": 250.00, "total": 250.00, "fee": 0, "timestamp": "2026-03-01T10:00:00Z"}
+    ]
+  }
+]

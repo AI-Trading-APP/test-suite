@@ -1,74 +1,106 @@
-"""
-Pytest configuration and shared fixtures
-"""
+"""Root conftest — loads golden data and provides shared fixtures."""
+import json
+import sys
+from pathlib import Path
 
 import pytest
-import requests
-import time
 
-def pytest_configure(config):
-    """Configure pytest"""
-    config.addinivalue_line(
-        "markers", "slow: marks tests as slow (deselect with '-m \"not slow\"')"
-    )
-    config.addinivalue_line(
-        "markers", "integration: marks tests as integration tests"
-    )
-    config.addinivalue_line(
-        "markers", "e2e: marks tests as end-to-end tests"
-    )
+# Make tests/mocks and tests/factories importable
+TESTS_DIR = Path(__file__).parent
+sys.path.insert(0, str(TESTS_DIR.parent))
+sys.path.insert(0, str(TESTS_DIR))
 
-
-@pytest.fixture(scope="session", autouse=True)
-def check_services_running():
-    """Check that all required services are running before tests"""
-    services = {
-        "User Service": "http://localhost:8001/docs",
-        "Screener Service": "http://localhost:8002/docs",
-        "Watchlist Service": "http://localhost:8003/docs",
-        "Portfolio Service": "http://localhost:8004/docs",
-        "Paper Trading Service": "http://localhost:8005/docs",
-        "Frontend": "http://localhost:3000"
-    }
-    
-    failed_services = []
-    
-    for name, url in services.items():
-        try:
-            response = requests.get(url, timeout=3)
-            if response.status_code != 200:
-                failed_services.append(name)
-        except requests.exceptions.RequestException:
-            failed_services.append(name)
-    
-    if failed_services:
-        pytest.exit(
-            f"The following services are not running: {', '.join(failed_services)}\n"
-            f"Please start all services before running tests."
-        )
+GOLDEN_DIR = TESTS_DIR / "golden"
 
 
 @pytest.fixture(scope="session")
-def base_urls():
-    """Base URLs for all services"""
-    return {
-        "user": "http://localhost:8001",
-        "screener": "http://localhost:8002",
-        "watchlist": "http://localhost:8003",
-        "portfolio": "http://localhost:8004",
-        "paper_trading": "http://localhost:8005",
-        "frontend": "http://localhost:3000"
-    }
+def golden_users():
+    with open(GOLDEN_DIR / "users.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_stocks():
+    with open(GOLDEN_DIR / "stocks.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_portfolios():
+    with open(GOLDEN_DIR / "portfolios.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_paper_accounts():
+    with open(GOLDEN_DIR / "paper_accounts.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_watchlists():
+    with open(GOLDEN_DIR / "watchlists.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_predictions():
+    with open(GOLDEN_DIR / "predictions.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_news():
+    with open(GOLDEN_DIR / "news_articles.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_referrals():
+    with open(GOLDEN_DIR / "referrals.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_subscriptions():
+    with open(GOLDEN_DIR / "subscriptions.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_transactions():
+    with open(GOLDEN_DIR / "transactions.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def golden_backtests():
+    with open(GOLDEN_DIR / "backtest_results.json") as f:
+        return json.load(f)
 
 
 @pytest.fixture
 def test_ticker():
-    """A reliable test ticker"""
     return "AAPL"
 
 
 @pytest.fixture
 def test_tickers():
-    """Multiple test tickers"""
     return ["AAPL", "MSFT", "GOOGL", "TSLA", "AMZN"]
 
+
+@pytest.fixture(scope="session")
+def service_urls():
+    """Test service URLs for integration tests."""
+    return {
+        "user": "http://127.0.0.1:8101",
+        "watchlist": "http://127.0.0.1:8102",
+        "screener": "http://127.0.0.1:8103",
+        "portfolio": "http://127.0.0.1:8104",
+        "paper_trading": "http://127.0.0.1:8105",
+        "analytics": "http://127.0.0.1:8106",
+        "subscription": "http://127.0.0.1:8107",
+        "referral": "http://127.0.0.1:8108",
+        "news": "http://127.0.0.1:8109",
+        "prediction_engine": "http://127.0.0.1:8110",
+    }

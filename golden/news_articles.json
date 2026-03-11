@@ -1,0 +1,732 @@
+[
+  {
+    "id": "news-001",
+    "source": "Barrons",
+    "title": "SPY Beats Q4 Earnings Estimates, Revenue Surges 15%",
+    "description": "Full coverage of SPY latest developments and market impact analysis.",
+    "url": "https://example.com/news/spy-1",
+    "published_at": "2026-03-08T13:27:00Z",
+    "sentiment_score": 0.777,
+    "sentiment_label": "positive",
+    "tickers": [
+      "SPY",
+      "XOM"
+    ],
+    "impact_score": 0.81
+  },
+  {
+    "id": "news-002",
+    "source": "Bloomberg",
+    "title": "UNH Announces $10B Share Buyback Program",
+    "description": "Full coverage of UNH latest developments and market impact analysis.",
+    "url": "https://example.com/news/unh-2",
+    "published_at": "2026-03-02T11:31:00Z",
+    "sentiment_score": 0.351,
+    "sentiment_label": "positive",
+    "tickers": [
+      "UNH",
+      "AAPL"
+    ],
+    "impact_score": 0.48
+  },
+  {
+    "id": "news-003",
+    "source": "Barrons",
+    "title": "GOOGL Stock Hits New 52-Week High on Strong Guidance",
+    "description": "Full coverage of GOOGL latest developments and market impact analysis.",
+    "url": "https://example.com/news/googl-3",
+    "published_at": "2026-03-04T08:46:00Z",
+    "sentiment_score": 0.897,
+    "sentiment_label": "positive",
+    "tickers": [
+      "GOOGL",
+      "XOM"
+    ],
+    "impact_score": 0.8
+  },
+  {
+    "id": "news-004",
+    "source": "Seeking Alpha",
+    "title": "Analysts Upgrade WMT to Overweight on Growth Prospects",
+    "description": "Full coverage of WMT latest developments and market impact analysis.",
+    "url": "https://example.com/news/wmt-4",
+    "published_at": "2026-03-10T14:44:00Z",
+    "sentiment_score": 0.788,
+    "sentiment_label": "positive",
+    "tickers": [
+      "WMT"
+    ],
+    "impact_score": 0.67
+  },
+  {
+    "id": "news-005",
+    "source": "Barrons",
+    "title": "META Reports Record Quarterly Revenue, Shares Rally",
+    "description": "Full coverage of META latest developments and market impact analysis.",
+    "url": "https://example.com/news/meta-5",
+    "published_at": "2026-03-05T16:55:00Z",
+    "sentiment_score": 0.42,
+    "sentiment_label": "positive",
+    "tickers": [
+      "META",
+      "GOOGL"
+    ],
+    "impact_score": 0.46
+  },
+  {
+    "id": "news-006",
+    "source": "Reuters",
+    "title": "GOOGL Expands AI Division with Major Partnership",
+    "description": "Full coverage of GOOGL latest developments and market impact analysis.",
+    "url": "https://example.com/news/googl-6",
+    "published_at": "2026-03-06T11:55:00Z",
+    "sentiment_score": 0.488,
+    "sentiment_label": "positive",
+    "tickers": [
+      "GOOGL",
+      "AMZN"
+    ],
+    "impact_score": 0.79
+  },
+  {
+    "id": "news-007",
+    "source": "Barrons",
+    "title": "SPY Dividend Increase Signals Confidence in Cash Flow",
+    "description": "Full coverage of SPY latest developments and market impact analysis.",
+    "url": "https://example.com/news/spy-7",
+    "published_at": "2026-03-07T18:05:00Z",
+    "sentiment_score": 0.594,
+    "sentiment_label": "positive",
+    "tickers": [
+      "SPY",
+      "JPM"
+    ],
+    "impact_score": 0.74
+  },
+  {
+    "id": "news-008",
+    "source": "Bloomberg",
+    "title": "JPM Secures Major Government Contract Worth $5B",
+    "description": "Full coverage of JPM latest developments and market impact analysis.",
+    "url": "https://example.com/news/jpm-8",
+    "published_at": "2026-03-04T13:34:00Z",
+    "sentiment_score": 0.383,
+    "sentiment_label": "positive",
+    "tickers": [
+      "JPM",
+      "AMZN"
+    ],
+    "impact_score": 0.49
+  },
+  {
+    "id": "news-009",
+    "source": "Yahoo Finance",
+    "title": "Wall Street Raises WMT Price Target After Strong Quarter",
+    "description": "Full coverage of WMT latest developments and market impact analysis.",
+    "url": "https://example.com/news/wmt-9",
+    "published_at": "2026-03-09T18:08:00Z",
+    "sentiment_score": 0.758,
+    "sentiment_label": "positive",
+    "tickers": [
+      "WMT",
+      "GOOGL"
+    ],
+    "impact_score": 0.69
+  },
+  {
+    "id": "news-010",
+    "source": "WSJ",
+    "title": "GOOGL Market Share Gains Accelerate in Key Segments",
+    "description": "Full coverage of GOOGL latest developments and market impact analysis.",
+    "url": "https://example.com/news/googl-10",
+    "published_at": "2026-03-05T19:37:00Z",
+    "sentiment_score": 0.578,
+    "sentiment_label": "positive",
+    "tickers": [
+      "GOOGL",
+      "AMZN"
+    ],
+    "impact_score": 0.31
+  },
+  {
+    "id": "news-011",
+    "source": "WSJ",
+    "title": "SPY New Product Launch Exceeds Analyst Expectations",
+    "description": "Full coverage of SPY latest developments and market impact analysis.",
+    "url": "https://example.com/news/spy-11",
+    "published_at": "2026-03-01T06:17:00Z",
+    "sentiment_score": 0.885,
+    "sentiment_label": "positive",
+    "tickers": [
+      "SPY",
+      "AMZN"
+    ],
+    "impact_score": 0.54
+  },
+  {
+    "id": "news-012",
+    "source": "Barrons",
+    "title": "MSFT Operating Margins Improve for Third Straight Quarter",
+    "description": "Full coverage of MSFT latest developments and market impact analysis.",
+    "url": "https://example.com/news/msft-12",
+    "published_at": "2026-03-02T20:31:00Z",
+    "sentiment_score": 0.436,
+    "sentiment_label": "positive",
+    "tickers": [
+      "MSFT"
+    ],
+    "impact_score": 0.35
+  },
+  {
+    "id": "news-013",
+    "source": "Barrons",
+    "title": "SPY International Revenue Growth Outpaces Domestic",
+    "description": "Full coverage of SPY latest developments and market impact analysis.",
+    "url": "https://example.com/news/spy-13",
+    "published_at": "2026-03-02T12:27:00Z",
+    "sentiment_score": 0.341,
+    "sentiment_label": "positive",
+    "tickers": [
+      "SPY",
+      "AAPL"
+    ],
+    "impact_score": 0.69
+  },
+  {
+    "id": "news-014",
+    "source": "CNBC",
+    "title": "AAPL Cloud Business Revenue Jumps 30% Year-Over-Year",
+    "description": "Full coverage of AAPL latest developments and market impact analysis.",
+    "url": "https://example.com/news/aapl-14",
+    "published_at": "2026-03-04T11:32:00Z",
+    "sentiment_score": 0.733,
+    "sentiment_label": "positive",
+    "tickers": [
+      "AAPL"
+    ],
+    "impact_score": 0.91
+  },
+  {
+    "id": "news-015",
+    "source": "Bloomberg",
+    "title": "NVDA CEO Says Demand Pipeline Strongest in Company History",
+    "description": "Full coverage of NVDA latest developments and market impact analysis.",
+    "url": "https://example.com/news/nvda-15",
+    "published_at": "2026-03-08T10:51:00Z",
+    "sentiment_score": 0.78,
+    "sentiment_label": "positive",
+    "tickers": [
+      "NVDA"
+    ],
+    "impact_score": 0.87
+  },
+  {
+    "id": "news-016",
+    "source": "WSJ",
+    "title": "UNH R&D Investments Begin Paying Off With New Revenue Streams",
+    "description": "Full coverage of UNH latest developments and market impact analysis.",
+    "url": "https://example.com/news/unh-16",
+    "published_at": "2026-03-10T20:34:00Z",
+    "sentiment_score": 0.726,
+    "sentiment_label": "positive",
+    "tickers": [
+      "UNH"
+    ],
+    "impact_score": 0.85
+  },
+  {
+    "id": "news-017",
+    "source": "Bloomberg",
+    "title": "WMT Supply Chain Improvements Drive Better-Than-Expected Margins",
+    "description": "Full coverage of WMT latest developments and market impact analysis.",
+    "url": "https://example.com/news/wmt-17",
+    "published_at": "2026-03-10T13:50:00Z",
+    "sentiment_score": 0.647,
+    "sentiment_label": "positive",
+    "tickers": [
+      "WMT"
+    ],
+    "impact_score": 0.64
+  },
+  {
+    "id": "news-018",
+    "source": "WSJ",
+    "title": "Institutional Investors Increase TSLA Holdings by 8%",
+    "description": "Full coverage of TSLA latest developments and market impact analysis.",
+    "url": "https://example.com/news/tsla-18",
+    "published_at": "2026-03-04T08:29:00Z",
+    "sentiment_score": 0.318,
+    "sentiment_label": "positive",
+    "tickers": [
+      "TSLA",
+      "XOM"
+    ],
+    "impact_score": 0.46
+  },
+  {
+    "id": "news-019",
+    "source": "Financial Times",
+    "title": "GOOGL Customer Retention Rate Hits All-Time High of 97%",
+    "description": "Full coverage of GOOGL latest developments and market impact analysis.",
+    "url": "https://example.com/news/googl-19",
+    "published_at": "2026-03-08T19:31:00Z",
+    "sentiment_score": 0.601,
+    "sentiment_label": "positive",
+    "tickers": [
+      "GOOGL",
+      "SPY"
+    ],
+    "impact_score": 0.49
+  },
+  {
+    "id": "news-020",
+    "source": "CNBC",
+    "title": "MSFT Strategic Acquisition Expected to Be Accretive by Q2",
+    "description": "Full coverage of MSFT latest developments and market impact analysis.",
+    "url": "https://example.com/news/msft-20",
+    "published_at": "2026-03-10T16:06:00Z",
+    "sentiment_score": 0.483,
+    "sentiment_label": "positive",
+    "tickers": [
+      "MSFT",
+      "TSLA"
+    ],
+    "impact_score": 0.64
+  },
+  {
+    "id": "news-021",
+    "source": "Reuters",
+    "title": "AAPL Misses Revenue Expectations, Shares Drop 5%",
+    "description": "Analysis of challenges facing AAPL and potential market implications.",
+    "url": "https://example.com/news/aapl-negative-1",
+    "published_at": "2026-03-05T08:53:00Z",
+    "sentiment_score": -0.378,
+    "sentiment_label": "negative",
+    "tickers": [
+      "AAPL",
+      "JPM"
+    ],
+    "impact_score": 0.89
+  },
+  {
+    "id": "news-022",
+    "source": "Bloomberg",
+    "title": "GOOGL Faces Regulatory Scrutiny Over Data Practices",
+    "description": "Analysis of challenges facing GOOGL and potential market implications.",
+    "url": "https://example.com/news/googl-negative-2",
+    "published_at": "2026-03-04T15:07:00Z",
+    "sentiment_score": -0.504,
+    "sentiment_label": "negative",
+    "tickers": [
+      "GOOGL"
+    ],
+    "impact_score": 0.76
+  },
+  {
+    "id": "news-023",
+    "source": "CNBC",
+    "title": "Analysts Downgrade GOOGL Citing Slowing Growth",
+    "description": "Analysis of challenges facing GOOGL and potential market implications.",
+    "url": "https://example.com/news/googl-negative-3",
+    "published_at": "2026-03-08T14:02:00Z",
+    "sentiment_score": -0.778,
+    "sentiment_label": "negative",
+    "tickers": [
+      "GOOGL",
+      "WMT"
+    ],
+    "impact_score": 0.47
+  },
+  {
+    "id": "news-024",
+    "source": "The Motley Fool",
+    "title": "AMZN Layoffs Signal Tough Times Ahead for Tech Sector",
+    "description": "Analysis of challenges facing AMZN and potential market implications.",
+    "url": "https://example.com/news/amzn-negative-4",
+    "published_at": "2026-03-10T13:50:00Z",
+    "sentiment_score": -0.798,
+    "sentiment_label": "negative",
+    "tickers": [
+      "AMZN",
+      "GOOGL"
+    ],
+    "impact_score": 0.82
+  },
+  {
+    "id": "news-025",
+    "source": "Reuters",
+    "title": "XOM Warns of Supply Chain Disruptions in Coming Quarter",
+    "description": "Analysis of challenges facing XOM and potential market implications.",
+    "url": "https://example.com/news/xom-negative-5",
+    "published_at": "2026-03-06T08:04:00Z",
+    "sentiment_score": -0.459,
+    "sentiment_label": "negative",
+    "tickers": [
+      "XOM"
+    ],
+    "impact_score": 0.79
+  },
+  {
+    "id": "news-026",
+    "source": "MarketWatch",
+    "title": "AAPL CEO Departure Raises Uncertainty About Strategic Direction",
+    "description": "Analysis of challenges facing AAPL and potential market implications.",
+    "url": "https://example.com/news/aapl-negative-6",
+    "published_at": "2026-03-07T17:09:00Z",
+    "sentiment_score": -0.851,
+    "sentiment_label": "negative",
+    "tickers": [
+      "AAPL",
+      "SPY"
+    ],
+    "impact_score": 0.86
+  },
+  {
+    "id": "news-027",
+    "source": "MarketWatch",
+    "title": "XOM Profit Margins Compress as Competition Intensifies",
+    "description": "Analysis of challenges facing XOM and potential market implications.",
+    "url": "https://example.com/news/xom-negative-7",
+    "published_at": "2026-03-08T12:30:00Z",
+    "sentiment_score": -0.384,
+    "sentiment_label": "negative",
+    "tickers": [
+      "XOM",
+      "TSLA"
+    ],
+    "impact_score": 0.62
+  },
+  {
+    "id": "news-028",
+    "source": "Yahoo Finance",
+    "title": "TSLA Loses Major Customer to Rival, Revenue Impact Expected",
+    "description": "Analysis of challenges facing TSLA and potential market implications.",
+    "url": "https://example.com/news/tsla-negative-8",
+    "published_at": "2026-03-05T11:17:00Z",
+    "sentiment_score": -0.667,
+    "sentiment_label": "negative",
+    "tickers": [
+      "TSLA",
+      "MSFT"
+    ],
+    "impact_score": 0.67
+  },
+  {
+    "id": "news-029",
+    "source": "CNBC",
+    "title": "GOOGL Insider Selling Reaches Highest Level in Two Years",
+    "description": "Analysis of challenges facing GOOGL and potential market implications.",
+    "url": "https://example.com/news/googl-negative-9",
+    "published_at": "2026-03-01T14:03:00Z",
+    "sentiment_score": -0.55,
+    "sentiment_label": "negative",
+    "tickers": [
+      "GOOGL"
+    ],
+    "impact_score": 0.5
+  },
+  {
+    "id": "news-030",
+    "source": "Financial Times",
+    "title": "NVDA Faces Class-Action Lawsuit Over Product Safety",
+    "description": "Analysis of challenges facing NVDA and potential market implications.",
+    "url": "https://example.com/news/nvda-negative-10",
+    "published_at": "2026-03-10T07:47:00Z",
+    "sentiment_score": -0.71,
+    "sentiment_label": "negative",
+    "tickers": [
+      "NVDA",
+      "META"
+    ],
+    "impact_score": 0.75
+  },
+  {
+    "id": "news-031",
+    "source": "Seeking Alpha",
+    "title": "XOM Inventory Buildup Raises Concerns About Demand",
+    "description": "Analysis of challenges facing XOM and potential market implications.",
+    "url": "https://example.com/news/xom-negative-11",
+    "published_at": "2026-03-03T07:08:00Z",
+    "sentiment_score": -0.777,
+    "sentiment_label": "negative",
+    "tickers": [
+      "XOM"
+    ],
+    "impact_score": 0.29
+  },
+  {
+    "id": "news-032",
+    "source": "Financial Times",
+    "title": "JPM Credit Rating Under Review for Possible Downgrade",
+    "description": "Analysis of challenges facing JPM and potential market implications.",
+    "url": "https://example.com/news/jpm-negative-12",
+    "published_at": "2026-03-08T18:16:00Z",
+    "sentiment_score": -0.397,
+    "sentiment_label": "negative",
+    "tickers": [
+      "JPM"
+    ],
+    "impact_score": 0.47
+  },
+  {
+    "id": "news-033",
+    "source": "Reuters",
+    "title": "GOOGL Market Share Erodes as New Competitors Emerge",
+    "description": "Analysis of challenges facing GOOGL and potential market implications.",
+    "url": "https://example.com/news/googl-negative-13",
+    "published_at": "2026-03-05T12:00:00Z",
+    "sentiment_score": -0.46,
+    "sentiment_label": "negative",
+    "tickers": [
+      "GOOGL"
+    ],
+    "impact_score": 0.33
+  },
+  {
+    "id": "news-034",
+    "source": "Yahoo Finance",
+    "title": "UNH Guidance Cut Sends Shares to Three-Month Low",
+    "description": "Analysis of challenges facing UNH and potential market implications.",
+    "url": "https://example.com/news/unh-negative-14",
+    "published_at": "2026-03-07T17:36:00Z",
+    "sentiment_score": -0.448,
+    "sentiment_label": "negative",
+    "tickers": [
+      "UNH"
+    ],
+    "impact_score": 0.5
+  },
+  {
+    "id": "news-035",
+    "source": "Reuters",
+    "title": "META Cash Burn Rate Accelerates, Raising Capital Concerns",
+    "description": "Analysis of challenges facing META and potential market implications.",
+    "url": "https://example.com/news/meta-negative-15",
+    "published_at": "2026-03-06T16:48:00Z",
+    "sentiment_score": -0.549,
+    "sentiment_label": "negative",
+    "tickers": [
+      "META"
+    ],
+    "impact_score": 0.37
+  },
+  {
+    "id": "news-036",
+    "source": "The Motley Fool",
+    "title": "SPY Trading Flat as Investors Await Earnings Report",
+    "description": "Latest updates on SPY with balanced market perspective.",
+    "url": "https://example.com/news/spy-neutral-1",
+    "published_at": "2026-03-08T13:06:00Z",
+    "sentiment_score": 0.025,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "SPY",
+      "NVDA"
+    ],
+    "impact_score": 0.4
+  },
+  {
+    "id": "news-037",
+    "source": "The Motley Fool",
+    "title": "META Announces Board of Directors Reshuffling",
+    "description": "Latest updates on META with balanced market perspective.",
+    "url": "https://example.com/news/meta-neutral-2",
+    "published_at": "2026-03-01T13:05:00Z",
+    "sentiment_score": 0.078,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "META",
+      "XOM"
+    ],
+    "impact_score": 0.27
+  },
+  {
+    "id": "news-038",
+    "source": "WSJ",
+    "title": "AAPL Completes Previously Announced Stock Split",
+    "description": "Latest updates on AAPL with balanced market perspective.",
+    "url": "https://example.com/news/aapl-neutral-3",
+    "published_at": "2026-03-05T12:16:00Z",
+    "sentiment_score": -0.196,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "AAPL",
+      "NVDA"
+    ],
+    "impact_score": 0.49
+  },
+  {
+    "id": "news-039",
+    "source": "Bloomberg",
+    "title": "Market Analysts Split on AAPL Near-Term Outlook",
+    "description": "Latest updates on AAPL with balanced market perspective.",
+    "url": "https://example.com/news/aapl-neutral-4",
+    "published_at": "2026-03-01T20:02:00Z",
+    "sentiment_score": 0.069,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "AAPL",
+      "XOM"
+    ],
+    "impact_score": 0.13
+  },
+  {
+    "id": "news-040",
+    "source": "Seeking Alpha",
+    "title": "XOM Holds Annual Shareholder Meeting, No Major Surprises",
+    "description": "Latest updates on XOM with balanced market perspective.",
+    "url": "https://example.com/news/xom-neutral-5",
+    "published_at": "2026-03-06T06:32:00Z",
+    "sentiment_score": -0.007,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "XOM",
+      "TSLA"
+    ],
+    "impact_score": 0.51
+  },
+  {
+    "id": "news-041",
+    "source": "Bloomberg",
+    "title": "SPY CFO Presents at Morgan Stanley Technology Conference",
+    "description": "Latest updates on SPY with balanced market perspective.",
+    "url": "https://example.com/news/spy-neutral-6",
+    "published_at": "2026-03-08T09:33:00Z",
+    "sentiment_score": 0.107,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "SPY"
+    ],
+    "impact_score": 0.56
+  },
+  {
+    "id": "news-042",
+    "source": "CNBC",
+    "title": "UNH Files Patent for New Technology Platform",
+    "description": "Latest updates on UNH with balanced market perspective.",
+    "url": "https://example.com/news/unh-neutral-7",
+    "published_at": "2026-03-04T18:38:00Z",
+    "sentiment_score": -0.038,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "UNH",
+      "GOOGL"
+    ],
+    "impact_score": 0.32
+  },
+  {
+    "id": "news-043",
+    "source": "Yahoo Finance",
+    "title": "MSFT Maintains Dividend at Current Level for Q1",
+    "description": "Latest updates on MSFT with balanced market perspective.",
+    "url": "https://example.com/news/msft-neutral-8",
+    "published_at": "2026-03-04T16:52:00Z",
+    "sentiment_score": 0.116,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "MSFT"
+    ],
+    "impact_score": 0.29
+  },
+  {
+    "id": "news-044",
+    "source": "Yahoo Finance",
+    "title": "GOOGL Opens New Office in Austin as Part of Expansion",
+    "description": "Latest updates on GOOGL with balanced market perspective.",
+    "url": "https://example.com/news/googl-neutral-9",
+    "published_at": "2026-03-09T11:46:00Z",
+    "sentiment_score": -0.12,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "GOOGL"
+    ],
+    "impact_score": 0.15
+  },
+  {
+    "id": "news-045",
+    "source": "Reuters",
+    "title": "XOM Reports In-Line Results, Maintains Full-Year Guidance",
+    "description": "Latest updates on XOM with balanced market perspective.",
+    "url": "https://example.com/news/xom-neutral-10",
+    "published_at": "2026-03-10T14:30:00Z",
+    "sentiment_score": 0.131,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "XOM"
+    ],
+    "impact_score": 0.58
+  },
+  {
+    "id": "news-046",
+    "source": "Bloomberg",
+    "title": "Sector Rotation Leaves XOM Largely Unchanged",
+    "description": "Latest updates on XOM with balanced market perspective.",
+    "url": "https://example.com/news/xom-neutral-11",
+    "published_at": "2026-03-02T08:39:00Z",
+    "sentiment_score": -0.134,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "XOM",
+      "UNH"
+    ],
+    "impact_score": 0.18
+  },
+  {
+    "id": "news-047",
+    "source": "Yahoo Finance",
+    "title": "JPM Updates Terms of Service, Minor Policy Changes",
+    "description": "Latest updates on JPM with balanced market perspective.",
+    "url": "https://example.com/news/jpm-neutral-12",
+    "published_at": "2026-03-08T07:34:00Z",
+    "sentiment_score": 0.188,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "JPM"
+    ],
+    "impact_score": 0.27
+  },
+  {
+    "id": "news-048",
+    "source": "CNBC",
+    "title": "XOM Volume Declines as Market Enters Low-Volatility Period",
+    "description": "Latest updates on XOM with balanced market perspective.",
+    "url": "https://example.com/news/xom-neutral-13",
+    "published_at": "2026-03-08T16:07:00Z",
+    "sentiment_score": -0.107,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "XOM"
+    ],
+    "impact_score": 0.55
+  },
+  {
+    "id": "news-049",
+    "source": "Bloomberg",
+    "title": "AMZN Partnership With University on Research Initiative",
+    "description": "Latest updates on AMZN with balanced market perspective.",
+    "url": "https://example.com/news/amzn-neutral-14",
+    "published_at": "2026-03-01T09:27:00Z",
+    "sentiment_score": 0.135,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "AMZN",
+      "NVDA"
+    ],
+    "impact_score": 0.3
+  },
+  {
+    "id": "news-050",
+    "source": "Reuters",
+    "title": "NVDA Refinances Debt at Favorable Terms",
+    "description": "Latest updates on NVDA with balanced market perspective.",
+    "url": "https://example.com/news/nvda-neutral-15",
+    "published_at": "2026-03-06T17:44:00Z",
+    "sentiment_score": -0.019,
+    "sentiment_label": "neutral",
+    "tickers": [
+      "NVDA",
+      "MSFT"
+    ],
+    "impact_score": 0.2
+  }
+]

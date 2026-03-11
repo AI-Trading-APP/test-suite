@@ -1,0 +1,25 @@
+{
+  "codes": [
+    {"id": "code-001", "user_id": "user-pro-001", "code": "PROTRADE", "is_active": true, "max_uses": 10, "current_uses": 3, "expires_at": "2026-06-10"},
+    {"id": "code-002", "user_id": "user-admin-001", "code": "ADMINFRE", "is_active": true, "max_uses": 100, "current_uses": 0},
+    {"id": "code-003", "user_id": "user-basic-001", "code": "BASICREF", "is_active": true, "max_uses": 5, "current_uses": 5},
+    {"id": "code-004", "user_id": "user-expired-001", "code": "EXPIRED1", "is_active": false, "expires_at": "2025-01-01"},
+    {"id": "code-005", "user_id": "user-free-001", "code": "FREEUSER", "is_active": true, "max_uses": 3, "current_uses": 1}
+  ],
+  "referrals": [
+    {"referrer_user_id": "user-pro-001", "referred_user_id": "user-referred-001", "code": "PROTRADE", "status": "completed"},
+    {"referrer_user_id": "user-pro-001", "referred_user_id": "user-new-001", "code": "PROTRADE", "status": "pending"},
+    {"referrer_user_id": "user-pro-001", "referred_user_id": "user-basic-001", "code": "PROTRADE", "status": "completed"},
+    {"referrer_user_id": "user-free-001", "referred_user_id": "user-google-001", "code": "FREEUSER", "status": "pending"}
+  ],
+  "rewards": [
+    {"user_id": "user-pro-001", "reward_type": "credit", "amount": 10.0, "status": "applied"},
+    {"user_id": "user-referred-001", "reward_type": "credit", "amount": 5.0, "status": "applied"},
+    {"user_id": "user-pro-001", "reward_type": "credit", "amount": 10.0, "status": "pending"},
+    {"user_id": "user-basic-001", "reward_type": "credit", "amount": 5.0, "status": "applied"}
+  ],
+  "campaigns": [
+    {"id": "camp-001", "name": "Launch Bonus", "referrer_reward_type": "credit", "referrer_reward_amount": 10.0, "referred_reward_type": "credit", "referred_reward_amount": 5.0, "is_active": true, "starts_at": "2026-01-01", "ends_at": "2026-12-31"},
+    {"id": "camp-002", "name": "Summer Special", "referrer_reward_type": "credit", "referrer_reward_amount": 20.0, "referred_reward_type": "trial_days", "referred_reward_amount": 30, "is_active": false, "starts_at": "2026-06-01", "ends_at": "2026-08-31"}
+  ]
+}

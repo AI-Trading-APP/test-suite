@@ -1,0 +1,1682 @@
+[
+  {
+    "ticker": "AAPL",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.04319,
+    "direction": "down",
+    "confidence": 0.539,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.0469,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.05888,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.02714,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.06166,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.04174,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.00681,
+    "direction": "down",
+    "confidence": 0.883,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.02042,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.01332,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.01346,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.017,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.02674,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.00672,
+    "direction": "up",
+    "confidence": 0.539,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.01062,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.01048,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.00066,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.00465,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.02294,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.03794,
+    "direction": "down",
+    "confidence": 0.564,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.02634,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.05709,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.02149,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.035,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.04733,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.05892,
+    "direction": "up",
+    "confidence": 0.846,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.05266,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.07098,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.04719,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.06328,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.06,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.05521,
+    "direction": "up",
+    "confidence": 0.642,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.05114,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.06598,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.05572,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.0626,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.06074,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.03667,
+    "direction": "up",
+    "confidence": 0.901,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03612,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.04341,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.03165,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.01794,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.04684,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.02641,
+    "direction": "down",
+    "confidence": 0.869,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.00986,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.02009,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.0396,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.03293,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.03076,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "GOOGL",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.04047,
+    "direction": "down",
+    "confidence": 0.706,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.03754,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.04703,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.05291,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.05694,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.03534,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "GOOGL",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.04833,
+    "direction": "down",
+    "confidence": 0.658,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.05916,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.04705,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.03938,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.03196,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.04278,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "GOOGL",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.07893,
+    "direction": "up",
+    "confidence": 0.934,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.08413,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.06826,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.07828,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.06603,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.09861,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "GOOGL",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.00778,
+    "direction": "up",
+    "confidence": 0.838,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.01045,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.00683,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.00449,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.00197,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.00186,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "AMZN",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.01465,
+    "direction": "down",
+    "confidence": 0.695,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.01784,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.03031,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.03215,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.02045,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.0311,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "AMZN",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.00632,
+    "direction": "up",
+    "confidence": 0.504,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.00775,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.01074,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.01409,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.00249,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.02573,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "AMZN",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.01587,
+    "direction": "down",
+    "confidence": 0.713,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.00584,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.02248,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.02194,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.0103,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.00292,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "AMZN",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.0649,
+    "direction": "up",
+    "confidence": 0.689,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.07361,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.07206,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.05978,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.0543,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.04804,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.06426,
+    "direction": "up",
+    "confidence": 0.526,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.06501,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.06576,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.05011,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.0705,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.08089,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.0509,
+    "direction": "up",
+    "confidence": 0.675,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03596,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.0699,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.05158,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.05608,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.06299,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.00021,
+    "direction": "up",
+    "confidence": 0.528,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.01435,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.00695,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.00581,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.01505,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.00982,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.07746,
+    "direction": "up",
+    "confidence": 0.801,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.06961,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.0891,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.05859,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.07832,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.09232,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "META",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.01691,
+    "direction": "up",
+    "confidence": 0.562,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.01691,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.01873,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.01167,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.03265,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.01051,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "META",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.01467,
+    "direction": "down",
+    "confidence": 0.728,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.02654,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.02179,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.01874,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.00286,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.03146,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "META",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.02438,
+    "direction": "down",
+    "confidence": 0.59,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.00457,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.00875,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.03661,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.0218,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.04098,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "META",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.00879,
+    "direction": "down",
+    "confidence": 0.654,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.00728,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.00838,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.00357,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.00742,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.00265,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "TSLA",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.01291,
+    "direction": "up",
+    "confidence": 0.829,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.02399,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.00318,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.02622,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.01603,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.01235,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "TSLA",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.00146,
+    "direction": "up",
+    "confidence": 0.601,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.00151,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.0135,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.00685,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.01739,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.01308,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "TSLA",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.02919,
+    "direction": "up",
+    "confidence": 0.723,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03702,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.01408,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.01129,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.04366,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.02366,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "TSLA",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.03696,
+    "direction": "up",
+    "confidence": 0.689,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03131,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.04777,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.03068,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.04711,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.04978,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.02651,
+    "direction": "down",
+    "confidence": 0.94,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.04401,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.02992,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.02649,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.01334,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.03951,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.02267,
+    "direction": "up",
+    "confidence": 0.666,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03954,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.00756,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.01329,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.03546,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.01556,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.07275,
+    "direction": "up",
+    "confidence": 0.523,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.06829,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.05705,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.07569,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.09127,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.06574,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.03409,
+    "direction": "up",
+    "confidence": 0.62,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03166,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.03695,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.02403,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.04171,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.03413,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "UNH",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.06771,
+    "direction": "up",
+    "confidence": 0.624,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.0859,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.055,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.04851,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.07412,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.07706,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "UNH",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.01205,
+    "direction": "up",
+    "confidence": 0.519,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03198,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.00229,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.02687,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.02771,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.00088,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "UNH",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.06231,
+    "direction": "up",
+    "confidence": 0.709,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.07829,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.07781,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.07328,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.05386,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.06551,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "UNH",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.07757,
+    "direction": "up",
+    "confidence": 0.644,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.07303,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.08509,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.06008,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.0677,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.06429,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "XOM",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.00409,
+    "direction": "up",
+    "confidence": 0.691,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.00837,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.00396,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.00932,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.01405,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.00508,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "XOM",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.0493,
+    "direction": "up",
+    "confidence": 0.917,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.06289,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.04141,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.06393,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.048,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.0406,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "XOM",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.03802,
+    "direction": "down",
+    "confidence": 0.699,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.03622,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.04685,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.05021,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.02038,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.05531,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "XOM",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.07212,
+    "direction": "up",
+    "confidence": 0.683,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.08378,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.05656,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.07492,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.08259,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.06956,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.00366,
+    "direction": "down",
+    "confidence": 0.722,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.01588,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.01519,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.01401,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.02216,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.01274,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.04045,
+    "direction": "down",
+    "confidence": 0.917,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.06001,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.0342,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.03857,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.05878,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.02279,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.045,
+    "direction": "up",
+    "confidence": 0.896,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.04243,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.03666,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.03244,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.02951,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.05184,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.05683,
+    "direction": "up",
+    "confidence": 0.595,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03787,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.05129,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.04294,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.04583,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.04571,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "SPY",
+    "horizon": 1,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.03611,
+    "direction": "up",
+    "confidence": 0.696,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.03853,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.03171,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.05546,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.03599,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.01781,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "SPY",
+    "horizon": 7,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.0319,
+    "direction": "down",
+    "confidence": 0.829,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.01539,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.04686,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.0335,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.01741,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.02983,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "SPY",
+    "horizon": 14,
+    "prediction_date": "2026-03-10",
+    "predicted_return": -0.04774,
+    "direction": "down",
+    "confidence": 0.734,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": -0.05619,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": -0.05921,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": -0.03028,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": -0.06351,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": -0.03455,
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "ticker": "SPY",
+    "horizon": 30,
+    "prediction_date": "2026-03-10",
+    "predicted_return": 0.04789,
+    "direction": "up",
+    "confidence": 0.767,
+    "models": [
+      {
+        "model": "xgboost",
+        "predicted_return": 0.04088,
+        "weight": 0.25
+      },
+      {
+        "model": "lightgbm",
+        "predicted_return": 0.0312,
+        "weight": 0.25
+      },
+      {
+        "model": "random_forest",
+        "predicted_return": 0.05464,
+        "weight": 0.2
+      },
+      {
+        "model": "elastic_net",
+        "predicted_return": 0.06626,
+        "weight": 0.15
+      },
+      {
+        "model": "cnn_transformer",
+        "predicted_return": 0.03508,
+        "weight": 0.15
+      }
+    ]
+  }
+]

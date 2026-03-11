@@ -1,0 +1,39 @@
+[
+  {
+    "id": "paper-new",
+    "user_id": "user-new-001",
+    "name": "Paper Trading Account",
+    "cash_balance": 100000.00,
+    "positions": [],
+    "orders": []
+  },
+  {
+    "id": "paper-active",
+    "user_id": "user-pro-001",
+    "name": "Pro Paper Account",
+    "cash_balance": 75000.00,
+    "positions": [
+      {"ticker": "AAPL", "quantity": 50, "avg_cost": 228.00, "current_price": 232.00},
+      {"ticker": "MSFT", "quantity": 20, "avg_cost": 415.00, "current_price": 418.00}
+    ],
+    "orders": [
+      {"id": "order-001", "type": "buy", "ticker": "AAPL", "quantity": 50, "price": 228.00, "status": "filled", "created_at": "2026-02-15T10:00:00Z", "filled_at": "2026-02-15T10:00:05Z"},
+      {"id": "order-002", "type": "buy", "ticker": "MSFT", "quantity": 20, "price": 415.00, "status": "filled", "created_at": "2026-02-18T11:30:00Z", "filled_at": "2026-02-18T11:30:03Z"},
+      {"id": "order-003", "type": "buy", "ticker": "GOOGL", "quantity": 15, "price": 170.00, "status": "filled", "created_at": "2026-02-20T09:45:00Z", "filled_at": "2026-02-20T09:45:02Z"},
+      {"id": "order-004", "type": "sell", "ticker": "GOOGL", "quantity": 15, "price": 176.00, "status": "filled", "created_at": "2026-03-05T14:00:00Z", "filled_at": "2026-03-05T14:00:04Z"},
+      {"id": "order-005", "type": "buy", "ticker": "NVDA", "quantity": 10, "price": 130.00, "status": "pending", "created_at": "2026-03-10T09:30:00Z", "filled_at": null}
+    ]
+  },
+  {
+    "id": "paper-maxed",
+    "user_id": "user-basic-001",
+    "name": "All-In Paper Account",
+    "cash_balance": 100.00,
+    "positions": [
+      {"ticker": "NVDA", "quantity": 100, "avg_cost": 900.00, "current_price": 132.00}
+    ],
+    "orders": [
+      {"id": "order-006", "type": "buy", "ticker": "NVDA", "quantity": 100, "price": 900.00, "status": "filled", "created_at": "2026-01-10T10:00:00Z", "filled_at": "2026-01-10T10:00:03Z"}
+    ]
+  }
+]

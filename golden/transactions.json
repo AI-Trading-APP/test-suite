@@ -1,0 +1,22 @@
+[
+  {"id": "txn-001", "user_id": "user-pro-001", "type": "buy", "ticker": "AAPL", "quantity": 20, "price": 228.00, "total": 4560.00, "fee": 0, "timestamp": "2026-01-20T10:15:00Z"},
+  {"id": "txn-002", "user_id": "user-pro-001", "type": "buy", "ticker": "MSFT", "quantity": 15, "price": 415.00, "total": 6225.00, "fee": 0, "timestamp": "2026-01-22T11:00:00Z"},
+  {"id": "txn-003", "user_id": "user-pro-001", "type": "buy", "ticker": "GOOGL", "quantity": 10, "price": 175.00, "total": 1750.00, "fee": 0, "timestamp": "2026-02-01T14:30:00Z"},
+  {"id": "txn-004", "user_id": "user-pro-001", "type": "buy", "ticker": "JPM", "quantity": 25, "price": 210.00, "total": 5250.00, "fee": 0, "timestamp": "2026-02-10T09:45:00Z"},
+  {"id": "txn-005", "user_id": "user-pro-001", "type": "sell", "ticker": "GOOGL", "quantity": 5, "price": 178.00, "total": 890.00, "fee": 0, "timestamp": "2026-03-05T14:20:00Z"},
+  {"id": "txn-006", "user_id": "user-basic-001", "type": "buy", "ticker": "AAPL", "quantity": 40, "price": 230.00, "total": 9200.00, "fee": 0, "timestamp": "2026-02-15T10:30:00Z"},
+  {"id": "txn-007", "user_id": "user-basic-001", "type": "buy", "ticker": "MSFT", "quantity": 10, "price": 412.00, "total": 4120.00, "fee": 0, "timestamp": "2026-02-20T11:15:00Z"},
+  {"id": "txn-008", "user_id": "user-basic-001", "type": "sell", "ticker": "MSFT", "quantity": 10, "price": 420.00, "total": 4200.00, "fee": 0, "timestamp": "2026-03-08T15:30:00Z"},
+  {"id": "txn-009", "user_id": "user-admin-001", "type": "buy", "ticker": "NVDA", "quantity": 100, "price": 120.00, "total": 12000.00, "fee": 0, "timestamp": "2026-01-10T10:00:00Z"},
+  {"id": "txn-010", "user_id": "user-admin-001", "type": "buy", "ticker": "AAPL", "quantity": 50, "price": 225.00, "total": 11250.00, "fee": 0, "timestamp": "2025-12-05T10:00:00Z"},
+  {"id": "txn-011", "user_id": "user-admin-001", "type": "buy", "ticker": "META", "quantity": 20, "price": 575.00, "total": 11500.00, "fee": 0, "timestamp": "2026-01-25T10:00:00Z"},
+  {"id": "txn-012", "user_id": "user-admin-001", "type": "sell", "ticker": "META", "quantity": 20, "price": 585.00, "total": 11700.00, "fee": 0, "timestamp": "2026-02-20T15:00:00Z"},
+  {"id": "txn-013", "user_id": "user-free-001", "type": "buy", "ticker": "TSLA", "quantity": 1, "price": 250.00, "total": 250.00, "fee": 0, "timestamp": "2026-03-01T10:00:00Z"},
+  {"id": "txn-014", "user_id": "user-admin-001", "type": "buy", "ticker": "JPM", "quantity": 60, "price": 205.00, "total": 12300.00, "fee": 0, "timestamp": "2026-01-20T14:00:00Z"},
+  {"id": "txn-015", "user_id": "user-admin-001", "type": "buy", "ticker": "UNH", "quantity": 10, "price": 520.00, "total": 5200.00, "fee": 0, "timestamp": "2026-02-01T10:15:00Z"},
+  {"id": "txn-016", "user_id": "user-pro-001", "type": "buy", "ticker": "NVDA", "quantity": 30, "price": 128.00, "total": 3840.00, "fee": 0, "timestamp": "2026-02-12T10:00:00Z"},
+  {"id": "txn-017", "user_id": "user-pro-001", "type": "sell", "ticker": "NVDA", "quantity": 30, "price": 135.00, "total": 4050.00, "fee": 0, "timestamp": "2026-02-28T15:00:00Z"},
+  {"id": "txn-018", "user_id": "user-admin-001", "type": "buy", "ticker": "XOM", "quantity": 80, "price": 108.00, "total": 8640.00, "fee": 0, "timestamp": "2026-02-10T11:30:00Z"},
+  {"id": "txn-019", "user_id": "user-admin-001", "type": "buy", "ticker": "MSFT", "quantity": 30, "price": 410.00, "total": 12300.00, "fee": 0, "timestamp": "2025-12-10T10:30:00Z"},
+  {"id": "txn-020", "user_id": "user-admin-001", "type": "buy", "ticker": "GOOGL", "quantity": 40, "price": 172.00, "total": 6880.00, "fee": 0, "timestamp": "2025-12-15T11:00:00Z"}
+]

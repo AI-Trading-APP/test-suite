@@ -1,0 +1,12 @@
+[
+  {"id": "user-admin-001", "name": "Admin User", "email": "admin@test.ktrading.tech", "password": "Admin@Test123", "auth_provider": "email", "role": "admin"},
+  {"id": "user-pro-001", "name": "Pro Trader", "email": "pro@test.ktrading.tech", "password": "ProTrader@123", "auth_provider": "email", "subscription": "pro"},
+  {"id": "user-basic-001", "name": "Basic User", "email": "basic@test.ktrading.tech", "password": "Basic@User123", "auth_provider": "email", "subscription": "basic"},
+  {"id": "user-free-001", "name": "Free User", "email": "free@test.ktrading.tech", "password": "FreeUser@123", "auth_provider": "email", "subscription": "free"},
+  {"id": "user-expired-001", "name": "Expired User", "email": "expired@test.ktrading.tech", "password": "Expired@User1", "auth_provider": "email", "subscription": "expired"},
+  {"id": "user-new-001", "name": "New User", "email": "new@test.ktrading.tech", "password": "NewUser@1234", "auth_provider": "email", "subscription": null},
+  {"id": "user-referred-001", "name": "Referred User", "email": "referred@test.ktrading.tech", "password": "Referred@User1", "auth_provider": "email", "referral_code": "REF12345"},
+  {"id": "user-locked-001", "name": "Locked User", "email": "locked@test.ktrading.tech", "password": "Locked@User1", "auth_provider": "email", "locked": true},
+  {"id": "user-google-001", "name": "Google User", "email": "google@test.ktrading.tech", "auth_provider": "google", "google_id": "google-sub-12345"},
+  {"id": "user-demo-001", "name": "Demo User", "email": "demo@ktrading.tech", "password": "Demo@123", "auth_provider": "email", "subscription": "pro"}
+]

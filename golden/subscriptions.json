@@ -1,0 +1,20 @@
+{
+  "plans": [
+    {"id": "plan-free", "name": "Free", "price": 0, "duration_months": 0, "stripe_price_id": null, "features": {"screener_searches": 5, "watchlist_stocks": 10, "predictions": 3}, "is_active": true},
+    {"id": "plan-basic", "name": "Basic", "price": 9.99, "duration_months": 1, "stripe_price_id": "price_test_basic", "features": {"screener_searches": 50, "watchlist_stocks": 50, "predictions": 20}, "is_active": true},
+    {"id": "plan-pro", "name": "Pro", "price": 29.99, "duration_months": 1, "stripe_price_id": "price_test_pro", "features": {"screener_searches": -1, "watchlist_stocks": -1, "predictions": -1}, "is_active": true},
+    {"id": "plan-enterprise", "name": "Enterprise", "price": 99.99, "duration_months": 1, "stripe_price_id": "price_test_enterprise", "features": {"screener_searches": -1, "watchlist_stocks": -1, "predictions": -1, "api_access": true}, "is_active": true}
+  ],
+  "user_subscriptions": [
+    {"user_id": "user-pro-001", "plan_id": "plan-pro", "stripe_subscription_id": "sub_test_pro", "stripe_customer_id": "cus_test_pro", "status": "active", "period_start": "2026-03-01", "period_end": "2026-04-01"},
+    {"user_id": "user-basic-001", "plan_id": "plan-basic", "stripe_subscription_id": "sub_test_basic", "stripe_customer_id": "cus_test_basic", "status": "active", "period_start": "2026-03-01", "period_end": "2026-04-01"},
+    {"user_id": "user-expired-001", "plan_id": "plan-pro", "stripe_subscription_id": "sub_test_expired", "stripe_customer_id": "cus_test_expired", "status": "canceled", "period_start": "2026-01-01", "period_end": "2026-02-01"},
+    {"user_id": "user-admin-001", "plan_id": "plan-enterprise", "stripe_subscription_id": "sub_test_enterprise", "stripe_customer_id": "cus_test_enterprise", "status": "active", "period_start": "2026-03-01", "period_end": "2026-04-01"}
+  ],
+  "payments": [
+    {"user_id": "user-pro-001", "amount": 29.99, "status": "succeeded", "stripe_payment_intent_id": "pi_test_001"},
+    {"user_id": "user-basic-001", "amount": 9.99, "status": "succeeded", "stripe_payment_intent_id": "pi_test_002"},
+    {"user_id": "user-expired-001", "amount": 29.99, "status": "succeeded", "stripe_payment_intent_id": "pi_test_003"},
+    {"user_id": "user-expired-001", "amount": 29.99, "status": "failed", "stripe_payment_intent_id": "pi_test_004"}
+  ]
+}
