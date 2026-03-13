@@ -271,14 +271,17 @@ code, body = req(f"{pt}/health")
 test("PT-01: /health returns 200", code == 200, f"got {code}")
 
 if USER_TOKEN:
-    code, body = req(f"{pt}/api/paper-trading/account", headers=user_auth)
-    test("PT-02: /api/paper-trading/account", code in (200, 404), f"got {code}")
+    code, body = req(f"{pt}/api/paper/account", headers=user_auth)
+    test("PT-02: /api/paper/account", code in (200, 404), f"got {code}")
 
-    code, body = req(f"{pt}/api/paper-trading/positions", headers=user_auth)
-    test("PT-03: /api/paper-trading/positions", code in (200, 404), f"got {code}")
+    # Positions are part of account response, verify account has positions key
+    if isinstance(body, dict):
+        test("PT-03: account has positions key", "positions" in body, str(list(body.keys()))[:60])
+    else:
+        test("PT-03: account has positions key", False, f"body type={type(body).__name__}")
 
-    code, body = req(f"{pt}/api/paper-trading/orders", headers=user_auth)
-    test("PT-04: /api/paper-trading/orders", code in (200, 404), f"got {code}")
+    code, body = req(f"{pt}/api/paper/orders", headers=user_auth)
+    test("PT-04: /api/paper/orders", code in (200, 404), f"got {code}")
 else:
     skip("PT-02: account", "no token")
     skip("PT-03: positions", "no token")
