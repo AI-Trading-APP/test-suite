@@ -3,6 +3,21 @@ Comprehensive End-to-End Test Suite
 Tests all services and capabilities of the AI Trading Platform
 """
 
+from pathlib import Path
+import sys
+
+CURRENT_DIR = Path(__file__).resolve().parent
+for import_path in (CURRENT_DIR, CURRENT_DIR.parent, CURRENT_DIR.parent.parent):
+    import_path_str = str(import_path)
+    if import_path_str not in sys.path:
+        sys.path.insert(0, import_path_str)
+
+from ai_trading_common.logging_config import setup_logging, get_logger
+
+setup_logging("test-suite")
+logger = get_logger()
+
+
 import pytest
 import requests
 import time
@@ -42,30 +57,30 @@ class TestResults:
     
     def add_pass(self, test_name: str):
         self.passed.append(test_name)
-        print(f"[PASS] {test_name}")
+        logger.info("script_output", message=f"[PASS] {test_name}")
     
     def add_fail(self, test_name: str, error: str):
         self.failed.append((test_name, error))
-        print(f"[FAIL] {test_name} - {error}")
+        logger.error("script_output", message=f"[FAIL] {test_name} - {error}")
     
     def add_skip(self, test_name: str, reason: str):
         self.skipped.append((test_name, reason))
-        print(f"[SKIP] {test_name} - {reason}")
+        logger.warning("script_output", message=f"[SKIP] {test_name} - {reason}")
     
     def summary(self):
         total = len(self.passed) + len(self.failed) + len(self.skipped)
-        print("\n" + "="*80)
-        print("TEST SUMMARY")
-        print("="*80)
-        print(f"[PASS] Passed: {len(self.passed)}")
-        print(f"[FAIL] Failed: {len(self.failed)}")
-        print(f"[SKIP] Skipped: {len(self.skipped)}")
-        print(f"[TOTAL] Total: {total}")
+        logger.info("script_output", message="\n" + "="*80)
+        logger.info("script_output", message="TEST SUMMARY")
+        logger.info("script_output", message="="*80)
+        logger.info("script_output", message=f"[PASS] Passed: {len(self.passed)}")
+        logger.error("script_output", message=f"[FAIL] Failed: {len(self.failed)}")
+        logger.warning("script_output", message=f"[SKIP] Skipped: {len(self.skipped)}")
+        logger.info("script_output", message=f"[TOTAL] Total: {total}")
         if self.failed:
-            print("\nFailed Tests:")
+            logger.error("script_output", message="\nFailed Tests:")
             for name, error in self.failed:
-                print(f"  - {name}: {error}")
-        print("="*80)
+                logger.error("script_output", message=f"  - {name}: {error}")
+        logger.info("script_output", message="="*80)
         return len(self.failed) == 0
 
 results = TestResults()
@@ -97,9 +112,9 @@ def check_service_health(url: str) -> bool:
 
 def test_all_services_health():
     """Test that all services are running and healthy"""
-    print("\n" + "="*80)
-    print("SERVICE HEALTH CHECKS")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="SERVICE HEALTH CHECKS")
+    logger.info("script_output", message="="*80)
     
     for service_name, url in SERVICES.items():
         if service_name == "frontend":
@@ -124,9 +139,9 @@ def test_all_services_health():
 
 def test_user_registration():
     """Test user registration"""
-    print("\n" + "="*80)
-    print("AUTHENTICATION: User Registration")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="AUTHENTICATION: User Registration")
+    logger.info("script_output", message="="*80)
     
     try:
         # Try different endpoint formats
@@ -165,9 +180,9 @@ def test_user_registration():
 
 def test_user_login() -> Optional[str]:
     """Test user login and return token"""
-    print("\n" + "="*80)
-    print("AUTHENTICATION: User Login")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="AUTHENTICATION: User Login")
+    logger.info("script_output", message="="*80)
     
     try:
         endpoints = [
@@ -222,9 +237,9 @@ def test_user_login() -> Optional[str]:
 
 def test_get_user_profile(token: str):
     """Test getting user profile"""
-    print("\n" + "="*80)
-    print("USER MANAGEMENT: Get Profile")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="USER MANAGEMENT: Get Profile")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -257,9 +272,9 @@ def test_get_user_profile(token: str):
 
 def test_prediction_health():
     """Test prediction engine health"""
-    print("\n" + "="*80)
-    print("PREDICTION ENGINE: Health Check")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="PREDICTION ENGINE: Health Check")
+    logger.info("script_output", message="="*80)
     
     try:
         response = requests.get(f"{SERVICES['prediction_engine']}/health", timeout=10)
@@ -272,9 +287,9 @@ def test_prediction_health():
 
 def test_get_prediction(token: str):
     """Test getting stock prediction"""
-    print("\n" + "="*80)
-    print("PREDICTION ENGINE: Get Prediction")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="PREDICTION ENGINE: Get Prediction")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"} if token else {}
@@ -307,9 +322,9 @@ def test_get_prediction(token: str):
 
 def test_backtest(token: str):
     """Test backtesting"""
-    print("\n" + "="*80)
-    print("PREDICTION ENGINE: Backtest")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="PREDICTION ENGINE: Backtest")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"} if token else {}
@@ -344,9 +359,9 @@ def test_backtest(token: str):
 
 def test_watchlist_get(token: str):
     """Test getting watchlist"""
-    print("\n" + "="*80)
-    print("WATCHLIST: Get Watchlist")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="WATCHLIST: Get Watchlist")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -364,9 +379,9 @@ def test_watchlist_get(token: str):
 
 def test_watchlist_add(token: str):
     """Test adding to watchlist"""
-    print("\n" + "="*80)
-    print("WATCHLIST: Add Stock")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="WATCHLIST: Add Stock")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -385,9 +400,9 @@ def test_watchlist_add(token: str):
 
 def test_watchlist_remove(token: str):
     """Test removing from watchlist"""
-    print("\n" + "="*80)
-    print("WATCHLIST: Remove Stock")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="WATCHLIST: Remove Stock")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -409,9 +424,9 @@ def test_watchlist_remove(token: str):
 
 def test_screener_sectors():
     """Test getting sectors"""
-    print("\n" + "="*80)
-    print("SCREENER: Get Sectors")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="SCREENER: Get Sectors")
+    logger.info("script_output", message="="*80)
     
     try:
         response = requests.get(
@@ -431,9 +446,9 @@ def test_screener_sectors():
 
 def test_screener_search(token: str):
     """Test stock screening"""
-    print("\n" + "="*80)
-    print("SCREENER: Search Stocks")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="SCREENER: Search Stocks")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"} if token else {}
@@ -460,9 +475,9 @@ def test_screener_search(token: str):
 
 def test_portfolio_get(token: str):
     """Test getting portfolio"""
-    print("\n" + "="*80)
-    print("PORTFOLIO: Get Portfolio")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="PORTFOLIO: Get Portfolio")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -484,9 +499,9 @@ def test_portfolio_get(token: str):
 
 def test_portfolio_buy(token: str):
     """Test buying stock"""
-    print("\n" + "="*80)
-    print("PORTFOLIO: Buy Stock")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="PORTFOLIO: Buy Stock")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -509,9 +524,9 @@ def test_portfolio_buy(token: str):
 
 def test_paper_trading_account(token: str):
     """Test getting paper trading account"""
-    print("\n" + "="*80)
-    print("PAPER TRADING: Get Account")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="PAPER TRADING: Get Account")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -533,9 +548,9 @@ def test_paper_trading_account(token: str):
 
 def test_paper_trading_order(token: str):
     """Test placing paper trading order"""
-    print("\n" + "="*80)
-    print("PAPER TRADING: Place Order")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="PAPER TRADING: Place Order")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -563,9 +578,9 @@ def test_paper_trading_order(token: str):
 
 def test_analytics_health():
     """Test analytics service health"""
-    print("\n" + "="*80)
-    print("ANALYTICS: Health Check")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="ANALYTICS: Health Check")
+    logger.info("script_output", message="="*80)
     
     try:
         response = requests.get(f"{SERVICES['analytics_service']}/health", timeout=10)
@@ -578,9 +593,9 @@ def test_analytics_health():
 
 def test_analytics_dashboard(token: str):
     """Test analytics dashboard"""
-    print("\n" + "="*80)
-    print("ANALYTICS: Get Dashboard")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="ANALYTICS: Get Dashboard")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -613,9 +628,9 @@ def test_analytics_dashboard(token: str):
 
 def test_subscription_health():
     """Test subscription service health"""
-    print("\n" + "="*80)
-    print("SUBSCRIPTION: Health Check")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="SUBSCRIPTION: Health Check")
+    logger.info("script_output", message="="*80)
     
     try:
         response = requests.get(f"{SERVICES['subscription_service']}/health", timeout=10)
@@ -628,9 +643,9 @@ def test_subscription_health():
 
 def test_subscription_plans(token: str):
     """Test getting subscription plans"""
-    print("\n" + "="*80)
-    print("SUBSCRIPTION: Get Plans")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="SUBSCRIPTION: Get Plans")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"} if token else {}
@@ -663,9 +678,9 @@ def test_subscription_plans(token: str):
 
 def test_referral_health():
     """Test referral service health"""
-    print("\n" + "="*80)
-    print("REFERRAL: Health Check")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="REFERRAL: Health Check")
+    logger.info("script_output", message="="*80)
     
     try:
         response = requests.get(f"{SERVICES['referral_service']}/health", timeout=10)
@@ -678,9 +693,9 @@ def test_referral_health():
 
 def test_referral_generate_code(token: str):
     """Test generating referral code"""
-    print("\n" + "="*80)
-    print("REFERRAL: Generate Code")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="REFERRAL: Generate Code")
+    logger.info("script_output", message="="*80)
     
     try:
         headers = {"Authorization": f"Bearer {token}"}
@@ -713,9 +728,9 @@ def test_referral_generate_code(token: str):
 
 def test_news_health():
     """Test news service health"""
-    print("\n" + "="*80)
-    print("NEWS: Health Check")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="NEWS: Health Check")
+    logger.info("script_output", message="="*80)
     
     try:
         response = requests.get(f"{SERVICES['news_service']}/health", timeout=10)
@@ -728,9 +743,9 @@ def test_news_health():
 
 def test_news_latest():
     """Test getting latest news"""
-    print("\n" + "="*80)
-    print("NEWS: Get Latest News")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="NEWS: Get Latest News")
+    logger.info("script_output", message="="*80)
     
     try:
         endpoints = [
@@ -757,9 +772,9 @@ def test_news_latest():
 
 def test_news_trending():
     """Test getting trending tickers"""
-    print("\n" + "="*80)
-    print("NEWS: Get Trending Tickers")
-    print("="*80)
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="NEWS: Get Trending Tickers")
+    logger.info("script_output", message="="*80)
     
     try:
         response = requests.get(
@@ -779,14 +794,14 @@ def test_news_trending():
 
 def run_all_tests():
     """Run all E2E tests"""
-    print("\n" + "="*80)
-    print("COMPREHENSIVE E2E TEST SUITE")
-    print("AI Trading Platform - All Services")
-    print("="*80)
-    print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info("script_output", message="\n" + "="*80)
+    logger.info("script_output", message="COMPREHENSIVE E2E TEST SUITE")
+    logger.info("script_output", message="AI Trading Platform - All Services")
+    logger.info("script_output", message="="*80)
+    logger.info("script_output", message=f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     # Wait for services to be ready
-    print("\nWaiting for services to be ready...")
+    logger.info("script_output", message="\nWaiting for services to be ready...")
     time.sleep(5)
     
     # 1. Health checks
@@ -797,7 +812,7 @@ def run_all_tests():
     token = test_user_login()
     
     if not token:
-        print("\n[WARNING] Could not get auth token. Some tests will be skipped.")
+        logger.warning("script_output", message="\n[WARNING] Could not get auth token. Some tests will be skipped.")
         token = ""
     
     # 3. User Management
@@ -853,7 +868,7 @@ def run_all_tests():
     
     # Summary
     success = results.summary()
-    print(f"\nCompleted at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info("script_output", message=f"\nCompleted at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     return success
 
