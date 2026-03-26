@@ -3,6 +3,21 @@ Quick Sanity Test - Run without pytest
 Tests all services are responding correctly
 """
 
+from pathlib import Path
+import sys
+
+CURRENT_DIR = Path(__file__).resolve().parent
+for import_path in (CURRENT_DIR, CURRENT_DIR.parent, CURRENT_DIR.parent.parent):
+    import_path_str = str(import_path)
+    if import_path_str not in sys.path:
+        sys.path.insert(0, import_path_str)
+
+from ai_trading_common.logging_config import setup_logging, get_logger
+
+setup_logging("test-suite")
+logger = get_logger()
+
+
 import requests
 import sys
 from datetime import datetime
@@ -16,18 +31,18 @@ RESET = '\033[0m'
 BOLD = '\033[1m'
 
 def print_header(text):
-    print(f"\n{CYAN}{BOLD}{'='*60}{RESET}")
-    print(f"{CYAN}{BOLD}{text.center(60)}{RESET}")
-    print(f"{CYAN}{BOLD}{'='*60}{RESET}\n")
+    logger.info("script_output", message=f"\n{CYAN}{BOLD}{'='*60}{RESET}")
+    logger.info("script_output", message=f"{CYAN}{BOLD}{text.center(60)}{RESET}")
+    logger.info("script_output", message=f"{CYAN}{BOLD}{'='*60}{RESET}\n")
 
 def print_success(text):
-    print(f"{GREEN}✓ {text}{RESET}")
+    logger.info("script_output", message=f"{GREEN}✓ {text}{RESET}")
 
 def print_error(text):
-    print(f"{RED}✗ {text}{RESET}")
+    logger.info("script_output", message=f"{RED}✗ {text}{RESET}")
 
 def print_info(text):
-    print(f"{YELLOW}ℹ {text}{RESET}")
+    logger.info("script_output", message=f"{YELLOW}ℹ {text}{RESET}")
 
 def test_service(name, url, expected_status=200):
     """Test if a service endpoint is responding"""
@@ -73,38 +88,38 @@ def test_api_endpoint(name, url, expected_key=None):
 
 def main():
     print_header("AI Trading Platform - Quick Sanity Test")
-    print(f"Test started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    logger.info("script_output", message=f"Test started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
     
     results = []
     
     # Test 1: User Service
-    print(f"{BOLD}[1/6] Testing User Service (Port 8001){RESET}")
+    logger.info("script_output", message=f"{BOLD}[1/6] Testing User Service (Port 8001){RESET}")
     result = test_service("User Service API Docs", "http://localhost:8001/docs")
     results.append(("User Service", result))
     
     # Test 2: Screener Service
-    print(f"\n{BOLD}[2/6] Testing Screener Service (Port 8002){RESET}")
+    logger.info("script_output", message=f"\n{BOLD}[2/6] Testing Screener Service (Port 8002){RESET}")
     result1 = test_service("Screener API Docs", "http://localhost:8002/docs")
     result2 = test_api_endpoint("Screener Sectors API", "http://localhost:8002/api/screener/sectors")
     results.append(("Screener Service", result1 and result2))
     
     # Test 3: Watchlist Service
-    print(f"\n{BOLD}[3/6] Testing Watchlist Service (Port 8003){RESET}")
+    logger.info("script_output", message=f"\n{BOLD}[3/6] Testing Watchlist Service (Port 8003){RESET}")
     result = test_service("Watchlist API Docs", "http://localhost:8003/docs")
     results.append(("Watchlist Service", result))
     
     # Test 4: Portfolio Service
-    print(f"\n{BOLD}[4/6] Testing Portfolio Service (Port 8004){RESET}")
+    logger.info("script_output", message=f"\n{BOLD}[4/6] Testing Portfolio Service (Port 8004){RESET}")
     result = test_service("Portfolio API Docs", "http://localhost:8004/docs")
     results.append(("Portfolio Service", result))
     
     # Test 5: Paper Trading Service
-    print(f"\n{BOLD}[5/6] Testing Paper Trading Service (Port 8005){RESET}")
+    logger.info("script_output", message=f"\n{BOLD}[5/6] Testing Paper Trading Service (Port 8005){RESET}")
     result = test_service("Paper Trading API Docs", "http://localhost:8005/docs")
     results.append(("Paper Trading Service", result))
     
     # Test 6: Frontend
-    print(f"\n{BOLD}[6/6] Testing Frontend (Port 3000){RESET}")
+    logger.info("script_output", message=f"\n{BOLD}[6/6] Testing Frontend (Port 3000){RESET}")
     result = test_service("Frontend", "http://localhost:3000")
     results.append(("Frontend", result))
     
@@ -120,21 +135,21 @@ def main():
         else:
             print_error(f"{service}: FAILED")
     
-    print(f"\n{CYAN}{BOLD}{'='*60}{RESET}")
+    logger.info("script_output", message=f"\n{CYAN}{BOLD}{'='*60}{RESET}")
     if passed == total:
-        print(f"{GREEN}{BOLD}✓ ALL {total} SERVICES PASSED - SYSTEM READY!{RESET}")
+        logger.info("script_output", message=f"{GREEN}{BOLD}✓ ALL {total} SERVICES PASSED - SYSTEM READY!{RESET}")
     else:
-        print(f"{YELLOW}{BOLD}⚠ {passed}/{total} SERVICES PASSED{RESET}")
-    print(f"{CYAN}{BOLD}{'='*60}{RESET}\n")
+        logger.info("script_output", message=f"{YELLOW}{BOLD}⚠ {passed}/{total} SERVICES PASSED{RESET}")
+    logger.info("script_output", message=f"{CYAN}{BOLD}{'='*60}{RESET}\n")
     
     # Service URLs
-    print(f"{BOLD}Service URLs:{RESET}")
-    print(f"  • Frontend:        http://localhost:3000")
-    print(f"  • User Service:    http://localhost:8001/docs")
-    print(f"  • Screener:        http://localhost:8002/docs")
-    print(f"  • Watchlist:       http://localhost:8003/docs")
-    print(f"  • Portfolio:       http://localhost:8004/docs")
-    print(f"  • Paper Trading:   http://localhost:8005/docs\n")
+    logger.info("script_output", message=f"{BOLD}Service URLs:{RESET}")
+    logger.info("script_output", message=f"  • Frontend:        http://localhost:3000")
+    logger.info("script_output", message=f"  • User Service:    http://localhost:8001/docs")
+    logger.info("script_output", message=f"  • Screener:        http://localhost:8002/docs")
+    logger.info("script_output", message=f"  • Watchlist:       http://localhost:8003/docs")
+    logger.info("script_output", message=f"  • Portfolio:       http://localhost:8004/docs")
+    logger.info("script_output", message=f"  • Paper Trading:   http://localhost:8005/docs\n")
     
     # Exit code
     if passed == total:
