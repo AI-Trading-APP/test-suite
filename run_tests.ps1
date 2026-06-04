@@ -5,8 +5,25 @@ Write-Host "`n╔═════════════════════
 Write-Host "║   AI Trading Platform - Automated Test Suite            ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝`n" -ForegroundColor Cyan
 
-# Check if virtual environment exists
-if (-not (Test-Path "venv")) {
+# --- Environment Selection ---
+if (-not $env:TEST_ENV) {
+    Write-Host "Select test environment:" -ForegroundColor Yellow
+    Write-Host "  1. local  — Docker services on localhost (default)" -ForegroundColor White
+    Write-Host "  2. test   — Test VPS at test.ktrading.tech" -ForegroundColor White
+    $envChoice = Read-Host "`nEnter choice (1-2, or press Enter for local)"
+    $env:TEST_ENV = if ($envChoice -eq "2") { "test" } else { "local" }
+}
+
+Write-Host "`nRunning in TEST_ENV=$($env:TEST_ENV) mode" -ForegroundColor Cyan
+
+if ($env:TEST_ENV -eq "local") {
+    Write-Host "Services expected at: http://localhost:8000-8009, http://localhost:3000" -ForegroundColor DarkCyan
+    Write-Host "Using env file: .env.test.local (auto-loaded by conftest.py)`n" -ForegroundColor DarkCyan
+} else {
+    Write-Host "Services expected at: test.ktrading.tech, ports 8101-8110" -ForegroundColor DarkCyan
+    Write-Host "Using env file: .env.test (auto-loaded by conftest.py)`n" -ForegroundColor DarkCyan
+}
+
     Write-Host "Creating virtual environment..." -ForegroundColor Yellow
     python -m venv venv
 }

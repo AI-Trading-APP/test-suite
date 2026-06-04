@@ -7,8 +7,31 @@ echo "║   AI Trading Platform - Automated Test Suite            ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
 
-# Check if virtual environment exists
-if [ ! -d "venv" ]; then
+# --- Environment Selection ---
+if [ -z "$TEST_ENV" ]; then
+    echo "Select test environment:"
+    echo "  1. local  — Docker services on localhost (default)"
+    echo "  2. test   — Test VPS at test.ktrading.tech"
+    echo ""
+    read -p "Enter choice (1-2, or press Enter for local): " env_choice
+    if [ "$env_choice" = "2" ]; then
+        export TEST_ENV="test"
+    else
+        export TEST_ENV="local"
+    fi
+fi
+
+echo ""
+echo "Running in TEST_ENV=$TEST_ENV mode"
+if [ "$TEST_ENV" = "local" ]; then
+    echo "Services expected at: http://localhost:8000-8009, http://localhost:3000"
+    echo "Using env file: .env.test.local (auto-loaded by conftest.py)"
+else
+    echo "Services expected at: test.ktrading.tech, ports 8101-8110"
+    echo "Using env file: .env.test (auto-loaded by conftest.py)"
+fi
+echo ""
+
     echo "Creating virtual environment..."
     python3 -m venv venv
 fi
