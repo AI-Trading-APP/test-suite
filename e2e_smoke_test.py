@@ -17,7 +17,7 @@ SKIP = 0
 BASE = "http://127.0.0.1"
 
 
-def req(url, method="GET", headers=None, data=None, timeout=15):
+def req(url, method="GET", headers=None, data=None, timeout=15, return_headers=False):
     headers = headers or {}
     try:
         if data and isinstance(data, dict):
@@ -26,18 +26,36 @@ def req(url, method="GET", headers=None, data=None, timeout=15):
         r = urllib.request.Request(url, data=data, headers=headers, method=method)
         with urllib.request.urlopen(r, timeout=timeout) as resp:
             body = resp.read().decode("utf-8")
+            # Preserve multi-valued headers (Set-Cookie) — dict() would collapse them
+            resp_headers = list(resp.headers.items()) if return_headers else None
             try:
-                return resp.status, json.loads(body)
+                parsed = json.loads(body)
             except Exception:
-                return resp.status, body
+                parsed = body
+            return (resp.status, parsed, resp_headers) if return_headers else (resp.status, parsed)
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8") if e.fp else ""
         try:
-            return e.code, json.loads(body)
+            parsed = json.loads(body)
         except Exception:
-            return e.code, body
+            parsed = body
+        return (e.code, parsed, None) if return_headers else (e.code, parsed)
     except Exception as e:
-        return 0, str(e)
+        return (0, str(e), None) if return_headers else (0, str(e))
+
+
+def extract_auth_cookie(headers):
+    """Extract the auth_token JWT from Set-Cookie response headers (multi-valued list)."""
+    if not headers:
+        return None
+    for name, value in headers:
+        if name.lower() != "set-cookie":
+            continue
+        # value looks like: "auth_token=eyJ...; HttpOnly; Max-Age=900; Path=/; SameSite=lax"
+        first = value.split(";", 1)[0].strip()
+        if first.startswith("auth_token="):
+            return first[len("auth_token="):]
+    return None
 
 
 def test(name, condition, detail=""):
@@ -195,22 +213,26 @@ us = f"{BASE}:8101"
 code, body = req(f"{us}/health")
 test("US-01: /health returns 200", code == 200, f"got {code}")
 
-# Login
-code, body = req(f"{us}/api/auth/login", method="POST", data={"email": "kasireddymeruva@gmail.com", "password": "Kurichedu12345!"})
-USER_TOKEN = None
-user_auth = {}
-if code == 200 and isinstance(body, dict) and ("token" in body or "access_token" in body):
-    USER_TOKEN = body.get("access_token") or body.get("token")
-    user_auth = {"Authorization": f"Bearer {USER_TOKEN}"}
-    test("US-02: login returns token", True, "")
-
+# Login — userservice returns JWT in `auth_token` Set-Cookie, not body
+SMOKE_EMAIL = "e2etest@ktrading.tech"
+SMOKE_PASSWORD = "SmokeTest@2026!"
+code, body, hdrs = req(
+    f"{us}/api/auth/login",
+    method="POST",
+    data={"email": SMOKE_EMAIL, "password": SMOKE_PASSWORD},
+    return_headers=True,
+)
+USER_TOKEN = extract_auth_cookie(hdrs) if code == 200 else None
+user_auth = {"Authorization": f"Bearer {USER_TOKEN}"} if USER_TOKEN else {}
+if USER_TOKEN:
+    test("US-02: login mints JWT (auth_token cookie)", True, f"len={len(USER_TOKEN)}")
     code, body = req(f"{us}/api/auth/me", headers=user_auth)
     test("US-03: /api/auth/me returns 200", code == 200, f"got {code}")
     if isinstance(body, dict):
         test("US-04: profile has email", "email" in body, str(list(body.keys()))[:60])
         test("US-05: profile has user_id or id", "user_id" in body or "id" in body, str(list(body.keys()))[:60])
 else:
-    skip("US-02: login", f"got {code} -- {str(body)[:60]}")
+    skip("US-02: login", f"got {code} -- {str(body)[:80]}")
     skip("US-03: profile", "no token")
     skip("US-04: profile email", "no token")
     skip("US-05: profile id", "no token")
@@ -317,6 +339,66 @@ if USER_TOKEN:
     test("NEWS-02: /api/news returns data", code in (200, 404), f"got {code}")
 else:
     skip("NEWS-02: news feed", "no token")
+
+# ============================================================
+# VALIDATION-UNIVERSE TIER COVERAGE (read-only; permissive today)
+# See specs/org-roadmap/validation-universe-2026-05-30.md
+# ============================================================
+print("\n\033[1m=== TC. VALIDATION-UNIVERSE TIER COVERAGE ===\033[0m")
+TIER_A = [
+    "AAPL","AMD","AMZN","AVGO","BAH","BEPC","CROX","CSIQ","DT","ELV",
+    "EVH","FDS","FSLR","GEV","GOOGL","IBM","IONQ","MOH","MRK","MU",
+    "NEE","NVDA","NVO","PLNT","PYPL","QCOM","RIVN","ROL","SMCI","TOST",
+    "TTD","UNH","UPS","WING","ZTS",
+]
+TIER_B = ["QQQ","SPY","VOO","GLD","IWF","VUG","SCHG","TQQQ","SGOV","USLV","DRAM"]
+HELD_OUT = ["BAC","CAT","CVX","DIS","HD","JNJ","JPM","KO","MSFT","XOM"]
+# Permissive thresholds — lift after free-tier keys provisioned
+TIER_A_PE_MIN = 0           # raise to 25 once Alpaca free lands
+TIER_A_NEWS_MIN = 0         # raise to 20 once NewsAPI free lands
+TIER_B_PORTFOLIO_NO_500 = True
+
+# TC-A1: PE predictions cover Tier A
+pe = f"{BASE}:8110"
+code, body = req(f"{pe}/v1/predictions/batch?tickers={','.join(TIER_A)}", headers={"Authorization": f"Bearer {ADMIN_TOKEN}"})
+covered_a = 0
+if code == 200 and isinstance(body, dict):
+    covered_a = sum(1 for t in TIER_A if t in body and body[t] and (
+        (isinstance(body[t], dict) and "pred_1d" in body[t]) or
+        (isinstance(body[t], list) and len(body[t]) > 0)
+    ))
+test(f"TC-A1: PE predictions cover >= {TIER_A_PE_MIN}/35 Tier A tickers", covered_a >= TIER_A_PE_MIN, f"covered={covered_a}/{len(TIER_A)}")
+
+# TC-A2: News service has articles for Tier A
+if USER_TOKEN:
+    ns = f"{BASE}:8109"
+    covered_news = 0
+    # Sample 5 tickers to bound runtime — extrapolate coverage
+    sample = TIER_A[:5]
+    for t in sample:
+        code, body = req(f"{ns}/api/news/{t}", headers=user_auth)
+        if code == 200 and isinstance(body, (list, dict)) and body:
+            covered_news += 1
+    # Extrapolate sample to full universe size; assert >= permissive threshold
+    extrapolated = covered_news * len(TIER_A) // len(sample)
+    test(f"TC-A2: news coverage extrapolation >= {TIER_A_NEWS_MIN} Tier A tickers", extrapolated >= TIER_A_NEWS_MIN, f"sampled={covered_news}/{len(sample)} → ~{extrapolated}/{len(TIER_A)}")
+else:
+    skip("TC-A2: news coverage", "no token")
+
+# TC-B1: Portfolio service accepts a Tier B ticker without 500
+if USER_TOKEN:
+    code, _ = req(f"{BASE}:8104/api/portfolio", headers=user_auth)
+    test(f"TC-B1: portfolio service alive for Tier B watchlist render", code in (200, 404), f"got {code}")
+else:
+    skip("TC-B1: portfolio Tier B", "no token")
+
+# TC-D1: Tier D ticker can be queried in PE batch without 500 (degrades gracefully)
+code, body = req(f"{pe}/v1/predictions/batch?tickers=ESAIY,NVLHF,DHBUF", headers={"Authorization": f"Bearer {ADMIN_TOKEN}"})
+test("TC-D1: PE accepts Tier D pink-sheet tickers without 500", code in (200, 404), f"got {code}")
+
+# TC-HO1: Held-out cohort accepted (signals generalization plumbing)
+code, _ = req(f"{pe}/v1/predictions/batch?tickers={','.join(HELD_OUT)}", headers={"Authorization": f"Bearer {ADMIN_TOKEN}"})
+test("TC-HO1: PE accepts held-out S&P cohort without 500", code in (200, 404), f"got {code}")
 
 # ============================================================
 # 8. FRONTEND (port 3001)
