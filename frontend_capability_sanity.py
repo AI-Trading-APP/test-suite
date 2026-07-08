@@ -3,6 +3,21 @@ Frontend capability sanity checks
 Verifies that each major UI route loads successfully with backend services running.
 """
 
+from pathlib import Path
+import sys
+
+CURRENT_DIR = Path(__file__).resolve().parent
+for import_path in (CURRENT_DIR, CURRENT_DIR.parent, CURRENT_DIR.parent.parent):
+    import_path_str = str(import_path)
+    if import_path_str not in sys.path:
+        sys.path.insert(0, import_path_str)
+
+from ai_trading_common.logging_config import setup_logging, get_logger
+
+setup_logging("test-suite")
+logger = get_logger()
+
+
 import requests
 from dataclasses import dataclass, field
 from typing import List, Dict
@@ -114,10 +129,10 @@ def check_capability(cap: CapabilityCheck) -> Dict:
 
 
 def run():
-    print("=" * 80)
-    print("Frontend Capability Sanity Report")
-    print(f"Started: {datetime.now().isoformat(timespec='seconds')}")
-    print("=" * 80)
+    logger.info("script_output", message="=" * 80)
+    logger.info("script_output", message="Frontend Capability Sanity Report")
+    logger.info("script_output", message=f"Started: {datetime.now().isoformat(timespec='seconds')}")
+    logger.info("script_output", message="=" * 80)
 
     summary = {"pass": 0, "warn": 0, "fail": 0}
     results = []
@@ -129,19 +144,19 @@ def run():
         status = res["status"].upper()
         http = res["http_status"]
         details = res["details"]
-        print(f"[{status}] {cap.name} ({cap.path}) -> HTTP {http} | {details}")
+        logger.info("script_output", message=f"[{status}] {cap.name} ({cap.path}) -> HTTP {http} | {details}")
 
-    print("\n" + "-" * 80)
-    print("Summary")
-    print("-" * 80)
+    logger.info("script_output", message="\n" + "-" * 80)
+    logger.info("script_output", message="Summary")
+    logger.info("script_output", message="-" * 80)
     total = len(CAPABILITIES)
-    print(f"Total capabilities: {total}")
+    logger.info("script_output", message=f"Total capabilities: {total}")
     for key in ["pass", "warn", "fail"]:
-        print(f"{key.title()}: {summary[key]}")
+        logger.info("script_output", message=f"{key.title()}: {summary[key]}")
 
     cert = "PASS" if summary["fail"] == 0 else "PARTIAL"
-    print(f"\nCertification: {cert}")
-    print("=" * 80)
+    logger.info("script_output", message=f"\nCertification: {cert}")
+    logger.info("script_output", message="=" * 80)
 
     return results, summary
 

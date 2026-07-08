@@ -3,6 +3,21 @@ Individual Service Sanity Tests
 Tests each service one by one with basic health and functionality checks
 """
 
+from pathlib import Path
+import sys
+
+CURRENT_DIR = Path(__file__).resolve().parent
+for import_path in (CURRENT_DIR, CURRENT_DIR.parent, CURRENT_DIR.parent.parent):
+    import_path_str = str(import_path)
+    if import_path_str not in sys.path:
+        sys.path.insert(0, import_path_str)
+
+from ai_trading_common.logging_config import setup_logging, get_logger
+
+setup_logging("test-suite")
+logger = get_logger()
+
+
 import requests
 import time
 import json
@@ -184,9 +199,9 @@ class ServiceTester:
     def test_service(self, service_name: str) -> Dict:
         """Run all tests for a service"""
         config = SERVICES[service_name]
-        print(f"\n{'='*80}")
-        print(f"Testing: {config['name']} (Port {config['port']})")
-        print(f"{'='*80}")
+        logger.info("script_output", message=f"\n{'='*80}")
+        logger.info("script_output", message=f"Testing: {config['name']} (Port {config['port']})")
+        logger.info("script_output", message=f"{'='*80}")
         
         results = {
             "service": config["name"],
@@ -195,53 +210,53 @@ class ServiceTester:
         }
         
         # Test 1: Connectivity
-        print("\n[1/4] Testing connectivity...")
+        logger.info("script_output", message="\n[1/4] Testing connectivity...")
         success, message = self.test_service_connectivity(service_name, config)
         results["tests"]["connectivity"] = {"success": success, "message": message}
-        print(f"  {'[PASS]' if success else '[FAIL]'} {message}")
+        logger.error("script_output", message=f"  {'[PASS]' if success else '[FAIL]'} {message}")
         
         if not success:
-            print(f"  [SKIP] Service not reachable, skipping remaining tests")
+            logger.warning("script_output", message=f"  [SKIP] Service not reachable, skipping remaining tests")
             return results
         
         # Test 2: Health endpoint
-        print("\n[2/4] Testing health endpoint...")
+        logger.info("script_output", message="\n[2/4] Testing health endpoint...")
         success, message = self.test_health_endpoint(service_name, config)
         if success is not None:
             results["tests"]["health"] = {"success": success, "message": message}
-            print(f"  {'[PASS]' if success else '[FAIL]'} {message}")
+            logger.error("script_output", message=f"  {'[PASS]' if success else '[FAIL]'} {message}")
         else:
             results["tests"]["health"] = {"success": None, "message": message}
-            print(f"  [SKIP] {message}")
+            logger.warning("script_output", message=f"  [SKIP] {message}")
         
         # Test 3: Root endpoint
-        print("\n[3/4] Testing root endpoint...")
+        logger.info("script_output", message="\n[3/4] Testing root endpoint...")
         success, message = self.test_root_endpoint(service_name, config)
         if success is not None:
             results["tests"]["root"] = {"success": success, "message": message}
-            print(f"  {'[PASS]' if success else '[FAIL]'} {message}")
+            logger.error("script_output", message=f"  {'[PASS]' if success else '[FAIL]'} {message}")
         else:
             results["tests"]["root"] = {"success": None, "message": message}
-            print(f"  [SKIP] {message}")
+            logger.warning("script_output", message=f"  [SKIP] {message}")
         
         # Test 4: API docs (for API services)
-        print("\n[4/4] Testing API documentation...")
+        logger.info("script_output", message="\n[4/4] Testing API documentation...")
         success, message = self.test_docs_endpoint(service_name, config)
         if success is not None:
             results["tests"]["docs"] = {"success": success, "message": message}
-            print(f"  {'[PASS]' if success else '[FAIL]'} {message}")
+            logger.error("script_output", message=f"  {'[PASS]' if success else '[FAIL]'} {message}")
         else:
             results["tests"]["docs"] = {"success": None, "message": message}
-            print(f"  [SKIP] {message}")
+            logger.warning("script_output", message=f"  [SKIP] {message}")
         
         return results
     
     def run_all_tests(self):
         """Run tests for all services"""
-        print("\n" + "="*80)
-        print("INDIVIDUAL SERVICE SANITY TESTS")
-        print("="*80)
-        print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        logger.info("script_output", message="\n" + "="*80)
+        logger.info("script_output", message="INDIVIDUAL SERVICE SANITY TESTS")
+        logger.info("script_output", message="="*80)
+        logger.info("script_output", message=f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         
         all_results = {}
         
@@ -251,7 +266,7 @@ class ServiceTester:
                 all_results[service_name] = result
                 time.sleep(1)  # Small delay between services
             except Exception as e:
-                print(f"\n[ERROR] Failed to test {service_name}: {str(e)}")
+                logger.error("script_output", message=f"\n[ERROR] Failed to test {service_name}: {str(e)}")
                 all_results[service_name] = {
                     "service": SERVICES[service_name]["name"],
                     "error": str(e)
@@ -264,16 +279,16 @@ class ServiceTester:
     
     def print_summary(self, results: Dict):
         """Print test summary"""
-        print("\n" + "="*80)
-        print("TEST SUMMARY")
-        print("="*80)
+        logger.info("script_output", message="\n" + "="*80)
+        logger.info("script_output", message="TEST SUMMARY")
+        logger.info("script_output", message="="*80)
         
         total_services = len(results)
         services_with_issues = 0
         
         for service_name, result in results.items():
             if "error" in result:
-                print(f"\n[ERROR] {result['service']}: {result['error']}")
+                logger.error("script_output", message=f"\n[ERROR] {result['service']}: {result['error']}")
                 services_with_issues += 1
                 continue
             
@@ -286,18 +301,18 @@ class ServiceTester:
             
             if failed_tests:
                 services_with_issues += 1
-                print(f"\n[ISSUES] {result['service']}:")
+                logger.info("script_output", message=f"\n[ISSUES] {result['service']}:")
                 for test in failed_tests:
-                    print(f"  - {test}: {tests[test]['message']}")
+                    logger.info("script_output", message=f"  - {test}: {tests[test]['message']}")
             else:
-                print(f"\n[OK] {result['service']}: All tests passed")
+                logger.info("script_output", message=f"\n[OK] {result['service']}: All tests passed")
         
-        print(f"\n{'='*80}")
-        print(f"Total Services: {total_services}")
-        print(f"Services with Issues: {services_with_issues}")
-        print(f"Services OK: {total_services - services_with_issues}")
-        print(f"{'='*80}")
-        print(f"Completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        logger.info("script_output", message=f"\n{'='*80}")
+        logger.info("script_output", message=f"Total Services: {total_services}")
+        logger.info("script_output", message=f"Services with Issues: {services_with_issues}")
+        logger.info("script_output", message=f"Services OK: {total_services - services_with_issues}")
+        logger.info("script_output", message=f"{'='*80}")
+        logger.info("script_output", message=f"Completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 if __name__ == "__main__":
     tester = ServiceTester()
